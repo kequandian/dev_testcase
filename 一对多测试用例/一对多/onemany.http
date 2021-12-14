@@ -1,0 +1,83 @@
+@endpoint = http://localhost:8000
+
+### 提交数据
+POST {{endpoint}}/api/crud/Asian/countriesTest/countriesTests
+
+{
+  "countryName": "China",
+  "items": [
+    {
+      "cityName": "Guangzhou"
+    },
+    {
+      "cityName": "Shenzhen"
+    },
+    {
+      "cityName": "Shanghai"
+    }
+  ]
+}
+
+### 获取数据
+GET {{endpoint}}/api/crud/Asian/countriesTest/countriesTests/1
+
+### 更新子项内容
+// 有id代表根据id更新内容，没id代表 代理增加
+PUT {{endpoint}}/api/crud/Asian/countriesTest/countriesTests/1
+
+{
+    "countryName": "China",
+    "id": 1,
+    "items": [
+      {
+        "cityName": "Guangzhou",
+        "id": 1,
+        "countryId": 1
+      },
+      {
+        "cityName": "Shenzhen",
+        "countryId": 1
+      },
+      {
+        "cityName": "Zhaoqing",
+        "countryId": 1
+      }
+    ]
+  }
+
+### 获取数据
+GET {{endpoint}}/api/crud/Asian/countriesTest/countriesTests/1
+
+### 添加新子项
+POST {{endpoint}}/api/crud/Asian/countriesTest/countriesTests
+
+{
+  "countryName": "China",
+  "items": [
+    {
+      "cityName": "Zhuhai",
+      "countryId": 1
+    }
+  ]
+}
+
+### 获取数据
+GET {{endpoint}}/api/crud/Asian/countriesTest/countriesTests/1
+
+### 移除子项
+PUT {{endpoint}}/api/crud/Asian/countriesTest/countriesTests/1
+
+{
+    "countryName": "China",
+    "items": [
+      {
+        "cityName": "Guangzhou",
+        "id": 1,
+        "countryId": 1
+      }
+    ]
+  }
+
+### 获取数据
+GET {{endpoint}}/api/crud/Asian/countriesTest/countriesTests/1
+

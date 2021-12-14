@@ -1,0 +1,76 @@
+@endpoint = http://localhost:8000
+
+### 新增数据
+POST {{endpoint}}/api/crud/relations/chineseTerritory/chineseTerritoryies
+
+{
+  "belongChinese": "Chian",
+  "items": [
+    {
+      "areaName": "Hongkong"
+    },
+    {
+      "areaName": "Macao"
+    },
+    {
+      "areaName": "Taiwan"
+    }
+  ]
+}
+
+### 获取数据
+GET {{endpoint}}/api/crud/relations/chineseTerritory/chineseTerritoryies/1
+
+
+### 更新数据
+// 有id代表根据id更新内容，没id代表 代理增加
+PUT {{endpoint}}/api/crud/relations/chineseTerritory/chineseTerritoryies/1
+
+{
+    "belongChinese": "Chian",
+    "items": [
+      {
+        "areaName": "Hongkong",
+        "id": 1
+      },
+      {
+        "areaName": "Macao"
+      },
+      {
+        "areaName": "Taiwan"
+      },
+      {
+        "areaName": "Xinjiang"
+      },
+      {
+        "areaName": "Japan"
+      }
+    ]
+  }
+
+### 获取数据
+GET {{endpoint}}/api/crud/relations/chineseTerritory/chineseTerritoryies/1
+
+### 移除关系
+PUT {{endpoint}}/api/crud/relations/chineseTerritory/chineseTerritoryies/1
+
+{
+    "belongChinese": "Chian",
+    "items": [
+      {
+        "areaName": "Hongkong",
+      },
+      {
+        "areaName": "Macao"
+      },
+      {
+        "areaName": "Taiwan"
+      },
+      {
+        "areaName": "Xinjiang"
+      }
+    ]
+  }
+
+### 获取数据
+GET {{endpoint}}/api/crud/relations/chineseTerritory/chineseTerritoryies/1

@@ -1,0 +1,13 @@
+@endpoint=http://localhost:8080
+
+### Generator Code within Path 生成单表代码并返回代码路径
+POST {{endpoint}}/api/cg/generate/code HTTP/1.1
+content-type: application/json
+
+{
+    "module": "OneToMany",
+    "tableName":"cg_cities_test",
+    "project": "OneToManyItem",
+    "submodule": "Asian",
+    "sql":"cg_cities_test.sql"
+}

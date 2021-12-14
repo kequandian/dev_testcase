@@ -1,0 +1,25 @@
+@endpoint=http://localhost:8080
+
+### Generator Code within Path 生成单表代码并返回代码路径
+POST {{endpoint}}/api/cg/generate/code HTTP/1.1
+content-type: application/json
+
+{
+    "project": "OneToManyRelation",
+    "module": "OneToManyRelation",
+    "tableName": "cg_chinese_territory",
+    "submodule": "relations",
+    "sql":"cg_chinese_territory.sql",
+     "slaves":
+    [
+        {
+            "tableName": "cg_chinese_area",
+            "peer": 
+            {
+                "tableName": "cg_master_slave_relation",
+                "masterId": "chinese_territory_id",
+                "masterPeerId":"chinese_area_id"
+            }
+        }
+    ]
+}
