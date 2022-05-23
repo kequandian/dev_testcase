@@ -1,4 +1,0 @@
-@endpoint = http://localhost:8080
-
-### 清空代码
-POST {{endpoint}}/api/cg/generate/clean HTTP/1.1
